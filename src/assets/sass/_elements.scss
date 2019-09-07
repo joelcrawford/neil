@@ -32,6 +32,6 @@ section {
 @media #{$small-and-down} {
     // styles for medium screens and down
     section {
-        flex-direction: column;
+        flex-direction: column-reverse;
     }
 }

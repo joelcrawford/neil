@@ -6,9 +6,7 @@ import React from 'react'
 export default () => {
     return (
         <section>
-            <div>
-                <img className="img-main" src={neil} alt="NC HAMMER" />
-            </div>
+            <img className="img-main" src={neil} alt="NC HAMMER" />
             <div className="valign-wrapper">
                 <div className="content-header">
                     <i className="fad fa-hammer fa-flip-horizontal fa-2x absolute-hammer" />

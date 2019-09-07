@@ -6,9 +6,8 @@ export default () => {
     return (
         <React.Fragment>
             <section>
-                <div>
-                    <img className="img-main" src={neil} alt="NC HAMMER" />
-                </div>
+                <img className="img-main" src={neil} alt="NC HAMMER" />
+
                 <div className="content-right">
                     <h3>SOME HEADER</h3>
                     <p>
@@ -22,9 +21,8 @@ export default () => {
                 </div>
             </section>
             <section>
-                <div>
-                    <img className="img-main" src={neil} alt="NC HAMMER" />
-                </div>
+                <img className="img-main" src={neil} alt="NC HAMMER" />
+
                 <div className="content-left">
                     <h3>SOME HEADER</h3>
                     <p>
@@ -38,9 +36,8 @@ export default () => {
                 </div>
             </section>
             <section>
-                <div>
-                    <img className="img-main" src={neil} alt="NC HAMMER" />
-                </div>
+                <img className="img-main" src={neil} alt="NC HAMMER" />
+
                 <div className="content-left">
                     <h3>SOME HEADER</h3>
                     <p>
