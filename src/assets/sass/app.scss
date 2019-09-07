@@ -1,22 +1,5 @@
 @import './entry-point';
 
-.content {
-    padding: 2em;
-}
-
-.content-right {
-    justify-content: right;
-    align-items: flex-end;
-    flex-direction: column;
-    padding: 2em;
-}
-.content-left {
-    justify-content: left;
-    align-items: flex-start;
-    flex-direction: column;
-    padding: 2em;
-}
-
 @media #{$small-and-down} {
     // styles for small screens and down
 }

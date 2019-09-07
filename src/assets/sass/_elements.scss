@@ -1,6 +1,6 @@
 @import './vars';
 body {
-    background: linear-gradient(#ffffff, #5a75a0);
+    background: linear-gradient($c-light, $c-blue-dark);
     margin: 0;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
         'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
@@ -18,15 +18,12 @@ h2,
 h3,
 h4,
 h5 {
-    font-family: 'Source Sans Pro', sans-serif;
+    font-family: 'Roboto', sans-serif;
     letter-spacing: 0.1em;
 }
 
-header {
-    border: $test-border;
-    display: flex;
-}
 section {
+    font-family: 'Muli', sans-serif;
     display: flex;
     min-height: 100vh;
     padding: 0;

@@ -1,15 +1,15 @@
 import '../assets/sass/main.scss'
-import neil from '../assets/img/neil-on-a-rock.jpg'
+import neil from '../assets/img/neil-on-a-rock_sq.jpg'
 import React from 'react'
 
 export default () => {
     return (
         <React.Fragment>
             <section>
-                <div className="split">
+                <div>
                     <img className="img-main" src={neil} alt="NC HAMMER" />
                 </div>
-                <div className="split content-left">
+                <div className="content-right">
                     <h3>SOME HEADER</h3>
                     <p>
                         Lick the curtain just to be annoying i'm bored inside,
@@ -22,10 +22,10 @@ export default () => {
                 </div>
             </section>
             <section>
-                <div className="split">
+                <div>
                     <img className="img-main" src={neil} alt="NC HAMMER" />
                 </div>
-                <div className="split content-left">
+                <div className="content-left">
                     <h3>SOME HEADER</h3>
                     <p>
                         Lick the curtain just to be annoying i'm bored inside,
@@ -38,10 +38,10 @@ export default () => {
                 </div>
             </section>
             <section>
-                <div className="split">
+                <div>
                     <img className="img-main" src={neil} alt="NC HAMMER" />
                 </div>
-                <div className="split content-left">
+                <div className="content-left">
                     <h3>SOME HEADER</h3>
                     <p>
                         Lick the curtain just to be annoying i'm bored inside,
