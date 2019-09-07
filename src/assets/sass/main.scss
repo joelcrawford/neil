@@ -1,4 +1,6 @@
+@import './entry-point';
+
 main {
     flex: 1 0 auto;
-    border: 1px dashed red;
+    border: $test-border;
 }

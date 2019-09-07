@@ -1,13 +1,58 @@
-import React from 'react'
 import '../assets/sass/main.scss'
+import neil from '../assets/img/neil-on-a-rock.jpg'
+import React from 'react'
 
 export default () => {
     return (
-        <main>
-            <div className="container">
-                <i className="absolute-diamond fal fa-dagger fa-rotate-180 fa-2x" />
-                <h1>NEIL!</h1>
-            </div>
-        </main>
+        <React.Fragment>
+            <section>
+                <div className="split">
+                    <img className="img-main" src={neil} alt="NC HAMMER" />
+                </div>
+                <div className="split content-left">
+                    <h3>SOME HEADER</h3>
+                    <p>
+                        Lick the curtain just to be annoying i'm bored inside,
+                        let me out i'm lonely outside, let me in i can't make up
+                        my mind whether to go in or out, guess i'll just stand
+                        partway in and partway out, contemplating the universe
+                        for half an hour how dare you nudge me with your
+                        foot?!?! leap into the air in greatest offense!
+                    </p>
+                </div>
+            </section>
+            <section>
+                <div className="split">
+                    <img className="img-main" src={neil} alt="NC HAMMER" />
+                </div>
+                <div className="split content-left">
+                    <h3>SOME HEADER</h3>
+                    <p>
+                        Lick the curtain just to be annoying i'm bored inside,
+                        let me out i'm lonely outside, let me in i can't make up
+                        my mind whether to go in or out, guess i'll just stand
+                        partway in and partway out, contemplating the universe
+                        for half an hour how dare you nudge me with your
+                        foot?!?! leap into the air in greatest offense!
+                    </p>
+                </div>
+            </section>
+            <section>
+                <div className="split">
+                    <img className="img-main" src={neil} alt="NC HAMMER" />
+                </div>
+                <div className="split content-left">
+                    <h3>SOME HEADER</h3>
+                    <p>
+                        Lick the curtain just to be annoying i'm bored inside,
+                        let me out i'm lonely outside, let me in i can't make up
+                        my mind whether to go in or out, guess i'll just stand
+                        partway in and partway out, contemplating the universe
+                        for half an hour how dare you nudge me with your
+                        foot?!?! leap into the air in greatest offense!
+                    </p>
+                </div>
+            </section>
+        </React.Fragment>
     )
 }

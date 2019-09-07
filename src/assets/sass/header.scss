@@ -1,5 +1,45 @@
 @import './entry-point';
 
-header {
-    border: 1px solid $c-dark;
+.split {
+    width: 50%;
+    border: $test-border;
+}
+.content-header {
+    font-size: 1.4em;
+    letter-spacing: 0.1em;
+    padding: 2em;
+    i {
+        margin-right: 1em;
+    }
+    p {
+        display: inline;
+    }
+}
+.p-header {
+    width: 100%;
+    page-break-before: always;
+}
+
+.img-main {
+    //object-fit: cover;
+    max-width: 100%; //calc(100% - 0.2em);
+    //max-height: 100vh;
+}
+
+.huge {
+    font-size: 40em;
+    opacity: 0.2;
+    color: $c-bright-feature;
+}
+@media #{$medium-and-down} {
+    .split {
+        min-height: 100vh;
+    }
+}
+@media #{$small-and-down} {
+    // styles for medium screens and down
+    .split {
+        width: auto;
+        min-height: 50vh;
+    }
 }

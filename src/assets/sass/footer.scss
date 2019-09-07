@@ -1,12 +1,14 @@
 @import './entry-point';
 
 footer {
-    border: 1px solid green;
+    border: $test-border;
 }
 .page-footer {
-    background-color: $c-light;
-    color: $c-dark;
+    background-color: #657ea6;
+    padding-top: 0;
+    color: $c-light;
     .footer-copyright {
-        color: $c-dark;
+        color: $c-light;
+        display: block;
     }
 }
