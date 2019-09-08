@@ -5,16 +5,18 @@
 }
 
 .content {
-    padding: 2em;
+    padding: 0;
 }
 .content-left,
 .content-right {
     flex-direction: column;
+    display: flex;
     padding: 1.2em;
     font-size: 1.1em;
     margin: 1em;
     border: 1px $border-line $c-blue-dark;
     color: $c-blue-deep;
+    background-color: rgba($color: $c-light, $alpha: 1);
     h1,
     h2,
     h3,
@@ -25,7 +27,7 @@
 }
 .content-right {
     justify-content: right;
-    align-items: flex-end;
+    align-items: flex-start;
 }
 .content-left {
     justify-content: left;

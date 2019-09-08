@@ -1,10 +1,11 @@
 @import './vars';
 body {
-    background: rgb(
-        238,
-        245,
-        255
-    ); //linear-gradient($c-light, $c-blue-dark, $c-green);
+    background: $c-light;
+    // background: rgb(
+    //     238,
+    //     245,
+    //     255
+    // ); //linear-gradient($c-light, $c-blue-dark, $c-green);
     //background: linear-gradient($c-blue-dark, #fff, $c-blue-light);
     margin: 0;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
@@ -23,7 +24,7 @@ h2,
 h3,
 h4,
 h5 {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Titillium Web', 'Roboto', sans-serif;
     letter-spacing: 0.1em;
 }
 
@@ -39,9 +40,17 @@ section {
 section:first-child {
     border-bottom: none;
 }
+a {
+    color: $c-blue-deep;
+    &:hover {
+        opacity: 0.7;
+    }
+}
 @media (max-width: $size-small-med) {
+}
+@media #{$medium-and-down} {
     section {
-        flex-direction: column-reverse;
+        flex-direction: column;
     }
 }
 @media #{$small-and-down} {

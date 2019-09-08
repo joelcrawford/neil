@@ -2,15 +2,16 @@
 
 footer {
     border: $test-border;
+    width: 100%;
 }
 .page-footer {
-    background-color: $c-dark;
+    background-color: $c-light;
     padding-top: 0;
-    color: $c-light;
+    color: $c-blue-deep;
     .footer-copyright {
-        color: $c-light;
+        color: $c-blue-deep;
         display: block;
-        background-color: #222;
+        background-color: $c-light;
     }
     h1,
     h2,
