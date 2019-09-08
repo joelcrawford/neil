@@ -10,10 +10,18 @@
 .content-left,
 .content-right {
     flex-direction: column;
-    padding: 2em;
+    padding: 1.2em;
+    font-size: 1.1em;
     margin: 1em;
     border: 1px $border-line $c-blue-dark;
     color: $c-blue-deep;
+    h1,
+    h2,
+    h3,
+    h4,
+    h5 {
+        text-transform: uppercase;
+    }
 }
 .content-right {
     justify-content: right;

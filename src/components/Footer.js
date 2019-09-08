@@ -7,10 +7,11 @@ export default () => {
             {/* <div className="container"> */}
             <div className="row">
                 <div className="col l6 s12">
-                    <h5>Footer Content</h5>
+                    <h5>Contact Information</h5>
                     <p>
-                        You can use rows and columns here to organize your
-                        footer content.
+                        Eat plants, meow, and throw up because i ate plants lick
+                        the other cats i like cats because they are fat and
+                        fluffy.
                     </p>
                     <h5>Links</h5>
                     <ul>
@@ -25,7 +26,7 @@ export default () => {
             </div>
             <div className="footer-copyright">
                 <div className="row">
-                    <div className="col l6 s12">© 2018 Copyright Text</div>
+                    <div className="col l6 s12">© 2018 Neil Carrodus</div>
                 </div>
             </div>
         </footer>

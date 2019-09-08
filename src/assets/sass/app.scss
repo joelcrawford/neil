@@ -1,17 +1,17 @@
 @import './entry-point';
 
 @media #{$small-and-down} {
-    // styles for small screens and down
+    // styles for small screens and down (600px)
 }
 @media #{$medium-and-up} {
-    // styles for medium screens and larger
+    // styles for medium screens and larger (992px)
 }
 @media #{$medium-and-down} {
     // styles for medium screens and down
 }
 @media #{$large-and-up} {
-    // styles for large screens and up
+    // styles for large screens and up (993px)
 }
 @media #{$extra-large-and-up} {
-    // styles for extra large screens and up
+    // styles for extra large screens and up (1200px)
 }

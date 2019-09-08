@@ -4,11 +4,20 @@ footer {
     border: $test-border;
 }
 .page-footer {
-    background-color: $c-blue-dark;
+    background-color: $c-dark;
     padding-top: 0;
     color: $c-light;
     .footer-copyright {
         color: $c-light;
         display: block;
+        background-color: #222;
+    }
+    h1,
+    h2,
+    h3,
+    h4,
+    h5 {
+        font-family: 'Roboto';
+        color: $c-light;
     }
 }
