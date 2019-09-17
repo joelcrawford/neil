@@ -1,27 +1,19 @@
-import { applyMiddleware, compose, createStore } from 'redux'
-import thunkMiddleware from 'redux-thunk'
-import { createLogger } from 'redux-logger'
-import monitorReducersEnhancer from './enhancers'
-import reducers from './reducers'
+import React, { createContext, useReducer } from 'react'
+import { reducer } from './reducers'
 
-export default function configureStore(preloadedState) {
-    let middlewares = []
-    let enhancers = []
+export const Store = createContext()
 
-    middlewares.push(thunkMiddleware)
+const initialState = {
+    pages: { data: [], isFetching: false, isError: false },
+    posts: { data: [], isFetching: false },
+    links: { data: [], isFetching: false },
+    services: { data: [], isFetching: false },
+    isError: false,
+}
 
-    if (process.env.NODE_ENV === 'development') {
-        const loggerMiddleware = createLogger()
-        middlewares.push(loggerMiddleware)
-        enhancers.push(monitorReducersEnhancer)
-    }
+export function StoreProvider(props) {
+    const [state, dispatch] = useReducer(reducer, initialState)
+    const value = { state, dispatch }
 
-    const middlewareEnhancer = applyMiddleware(...middlewares)
-
-    enhancers.push(middlewareEnhancer)
-    const composedEnhancers = compose(...enhancers)
-
-    const store = createStore(reducers, preloadedState, composedEnhancers)
-
-    return store
+    return <Store.Provider value={value}>{props.children}</Store.Provider>
 }

@@ -75,7 +75,8 @@
     }
     .absolute-hello {
         color: $c-light;
-        left: 66%;
+        font-size: 1.4em;
+        left: 20%;
         top: 92%;
     }
     .img-main {
@@ -87,7 +88,7 @@
 @media (max-width: $size-small-med) {
     .absolute-hello {
         color: $c-light;
-        left: 66%;
+        left: 10%;
         top: 82%;
     }
 }
@@ -100,7 +101,7 @@
     .absolute-hello {
         //left: 30%;
         top: 84%;
-        left: 50%;
+        left: 10%;
     }
 }
 
@@ -112,6 +113,7 @@
     }
     .absolute-hello {
         top: 84%;
-        left: 30%;
+        left: 10%;
+        font-size: 1.2em;
     }
 }

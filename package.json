@@ -19,7 +19,9 @@
         "build": "react-scripts build",
         "test": "react-scripts test",
         "eject": "react-scripts eject",
-        "build:client": "yarn build && mv build/index.html build/200.html && surge build neil.havehopeyo.com"
+        "build:client": "yarn build && mv build/index.html build/200.html && surge build neil.havehopeyo.com",
+        "build:client-alt": "yarn build && mv build/index.html build/200.html && surge build neil_alt.havehopeyo.com",
+        "deploy:do": "yarn build && scp -rp build/* root@web:/var/www/neilcarrodus.com/html"
     },
     "eslintConfig": {
         "extends": "react-app"

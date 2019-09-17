@@ -1,85 +1,78 @@
-import axios from 'axios'
+import * as types from '../types'
+import { alterWelcomeScreen } from '../utilities'
 
-const node = 'http://157.230.145.18/neil/'
-const apiURL = 'wp-json/wp/v2/'
+const ip = 'http://157.230.145.18/neil/'
+const wpRest = 'wp-json/wp/v2/'
 
-export const SET_PAGE = 'SET_PAGE'
-export const setPage = page => ({
-    type: SET_PAGE,
-    page,
-})
+const wpPostTypes = [
+    { id: 'pages', url: 'pages?_embed' },
+    { id: 'posts', url: 'posts?_embed' },
+    { id: 'links', url: 'links' },
+    { id: 'services', url: 'services' },
+]
 
-export const SET_WINDOW = 'SET_WINDOW'
-export const setWindow = window => ({
-    type: SET_WINDOW,
-    window,
-})
+export const fetchWPData = async (dispatch, type) => {
+    const t = wpPostTypes.find(t => t.id === type)
 
-/* ******************************************
-PAGES
-wp pages for content pages (about, preservation)
-********************************************/
-export const REQUEST_PAGES = 'REQUEST_PAGES'
-function requestPages() {
+    const actionName = `FETCH_${t.id.toUpperCase()}`
+    const reqName = `REQUEST_${t.id.toUpperCase()}`
+
+    const controller = new AbortController()
+    const signal = controller.signal
+    setTimeout(() => controller.abort(), 5000) // this getting called is like user aborted
+
+    dispatch({ type: types[reqName] })
+
+    try {
+        const request = await fetch(`${ip}${wpRest}${t.url}`, { signal })
+
+        if (!request.ok) {
+            throw Error(request.statusText)
+        }
+        const data = await request.json()
+
+        return dispatch({
+            type: types[actionName],
+            payload: data,
+        })
+    } catch (error) {
+        console.log('error', error)
+        //alterWelcomeScreen('error')
+        //return dispatch({type: types.FETCH_PAGES_ERROR})
+    }
+}
+
+function abortableFetch(request, opts) {
+    const controller = new AbortController()
+    const signal = controller.signal
+    setTimeout(() => controller.abort(), 5000)
+
     return {
-        type: REQUEST_PAGES,
+        abort: () => controller.abort(),
+        ready: fetch(request, { ...opts, signal }),
     }
 }
 
-export const RECEIVE_PAGES = 'RECEIVE_PAGES'
-function receivePages(json) {
-    return {
-        type: RECEIVE_PAGES,
-        pages: json, //.filter(child => child.acf.language === lang), //.data.children.map(child => child.data),
-        receivedAt: Date.now(),
-    }
-}
+export const fetchWPPages = async dispatch => {
+    const wpPages = 'pages?_embed'
+    dispatch({ type: types.REQUEST_PAGES })
 
-export const fetchPages = () => {
-    return dispatch => {
-        dispatch(requestPages())
-        return axios(`${node}${apiURL}pages?_embed`)
-            .then(
-                response => response.json(),
-                error => console.error('An error ', error)
-            )
-            .then(json => {
-                // do NOT receivePages until there are pages!
-                // ORDER THE PAGES by acf.menu_order
-                console.log(json)
-                dispatch(receivePages(json))
-            })
-    }
-}
+    try {
+        const request = await abortableFetch(`${ip}${wpRest}${wpPages}`)
+        const response = await request.ready
 
-/* ******************************************
-POSTS
-wp posts for home page content
-********************************************/
-export const REQUEST_POSTS = 'REQUEST_POSTS'
-function requestPosts() {
-    return {
-        type: REQUEST_POSTS,
-    }
-}
+        if (response.status !== 200) {
+            throw new Error(response.status)
+        }
 
-export const RECEIVE_POSTS = 'RECEIVE_POSTS'
-function receivePosts(json) {
-    return {
-        type: RECEIVE_POSTS,
-        posts: json, //.map(child => child.items),
-        receivedAt: Date.now(),
-    }
-}
+        let data = await response.json()
 
-export const fetchPosts = () => {
-    return dispatch => {
-        dispatch(requestPosts())
-        return axios(`${node}${apiURL}posts?_embed`)
-            .then(
-                response => response.json(),
-                error => console.error('An error ', error)
-            )
-            .then(json => dispatch(receivePosts(json)))
+        return dispatch({
+            type: types.FETCH_PAGES,
+            payload: data,
+        })
+    } catch (error) {
+        alterWelcomeScreen('error')
+        return dispatch({ type: types.FETCH_PAGES_ERROR })
     }
 }

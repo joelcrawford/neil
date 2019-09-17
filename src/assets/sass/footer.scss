@@ -4,6 +4,10 @@ footer {
     border: $test-border;
     width: 100%;
 }
+.footer {
+    font-family: 'Nunito', sans-serif;
+    letter-spacing: 0.04em;
+}
 .page-footer {
     background-color: $c-light;
     padding-top: 0;
